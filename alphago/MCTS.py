@@ -38,6 +38,7 @@ class MCTS():
 		self.tree = {}
 		self.cpuct = cpuct
 		self.addNode(root)
+		self.log = self.setup_logger('logger_mcts', './logs/logger_mcts.log')
 	
 	def __len__(self):
 		return len(self.tree)
@@ -86,7 +87,7 @@ class MCTS():
 
 
 	def backFill(self, leaf, value, breadcrumbs):
-		logger_mcts = self.setup_logger('logger_mcts', './logs/logger_mcts.log')
+		logger_mcts = self.log
 		currentPlayer = leaf.state.playerTurn
 
 		for edge in breadcrumbs:
