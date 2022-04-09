@@ -1,14 +1,14 @@
-# %matplotlib inline
-
 import numpy as np
 import random
 
 import MCTS as mc
 from game import GameState
-from loss import softmax_cross_entropy_with_logits
+from model import AlphaGo
+
+alphago = AlphaGo 
+loss = alphago.loss
 
 import config
-import loggers as lg
 import time
 
 import matplotlib.pyplot as plt
@@ -104,7 +104,6 @@ class Agent():
 
 
 	def get_preds(self, state):
-		#predict the leaf
 		inputToModel = np.array([self.model.convertToModelInput(state)])
 
 		preds = self.model.predict(inputToModel)
@@ -120,9 +119,8 @@ class Agent():
 		mask[allowedActions] = False
 		logits[mask] = -100
 
-		#SOFTMAX
 		odds = np.exp(logits)
-		probs = odds / np.sum(odds) ###put this just before the for?
+		probs = odds / np.sum(odds) 
 
 		return ((value, probs, allowedActions))
 
