@@ -1,2 +1,2 @@
-# Simple_Alphago_Frontend
-My own simplified Alphago AI with a Gradio.py and Django frontend.
+# Simple_VIT_Gradio
+My own simplified VIT model with a Gradio.py frontend.
