@@ -16,7 +16,7 @@ from typing import Any, Callable, Optional, Tuple, Type
 import flax.linen as nn
 import jax.numpy as jnp
 
-from . import models_resnet
+from . import resnet_model
 
 
 Array = Any
