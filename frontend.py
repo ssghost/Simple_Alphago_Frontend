@@ -3,9 +3,6 @@ from tqdm import tqdm
 from dcgan import DCGAN
 from PIL import Image
 
-self.dcgan = DCGAN()
-
-
 class Interface:
     def __init__(self):
         self.dcgan = DCGAN()
