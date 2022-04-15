@@ -37,7 +37,5 @@ class Interface:
 
 async def main():
     interface = Interface()
-    await interface.train_gan()
     await interface.launch_train()
-    await interface.test_gan()
     await interface.launch_test()
